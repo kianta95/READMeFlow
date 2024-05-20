@@ -39,8 +39,8 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
         .then(answers => {
-            const markdown = generateMarkdown(answers);
-            writeToFile('README.md', markdown);
+            const generateMarkdown = generateLibrary.generateMarkdown(answers);
+            writeToFile('README.md', generateMarkdown);
         })
         .catch(error => {
             console.error(error);
